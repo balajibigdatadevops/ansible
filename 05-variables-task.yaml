@@ -11,5 +11,5 @@
       Trainer: "ABC"
       Duration: "125HRS"
     ansible.builtin.debug:
-      msg: "Hello, I am learning {{ Course }} Trainer is "{{ Trainer }} and Duration is {{ Duration }}"
+      msg: "Hello, I am learning {{ Course }} Trainer is {{ Trainer }} and Duration is {{ Duration }}"
       
