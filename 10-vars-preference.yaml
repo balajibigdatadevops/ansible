@@ -1,0 +1,33 @@
+- name: playbook using at all kinds of variables and finding their preference
+  hosts: localhost
+  vars:
+    PERSON: "Balaji from play"
+    WISHES: "Good Morning from play"
+  vars_files:
+  - variables.yaml
+  vars_prompt:
+  - name: PERSON
+    prompt: Please enter your name
+    private: false
+  - name: WISHES
+    prompt: Please enter your wishes
+    private: false
+
+  tasks:
+  - name: task using at command line level
+    vars:
+      PERSON: "Balaji from task"
+      WISHES: "Good Morning from task"
+    ansible.builtin.debug:
+      msg: "Hello {{ PERSON }}, Good {{ WISHES }}"
+
+  
+
+  ##preference
+  #1.command
+  #2.TASK
+  #3. file
+  #4.prompt
+  #5.play
+  #6.inventory
+  #7.roles

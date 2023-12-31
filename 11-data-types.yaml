@@ -1,0 +1,33 @@
+- name: playbok using data types concept
+  hosts: localhost
+  vars:
+    NAME: Balaji
+    SKILLS:
+    - DEVOPS
+    - Shell
+    - Hadoop
+    - ETL
+    - AWS
+    EXPERIENCE:
+      DEVOPS: 3
+      Shell: 3
+      Hadoop: 4
+      ETL: 2
+      AWS: 2
+    Trainer: True
+  tasks:
+   - name: displaying one using scalar variable
+     ansible.builtin.debug:
+       msg: "Hello {{ NAME }}"
+
+   - name: displaying one using LIST variable
+     ansible.builtin.debug:
+       msg: "Skills are {{ SKILLS }}"
+    
+   - name: displaying one using map variable
+     ansible.builtin.debug:
+       msg: "EXPERIENCE is {{ EXPERIENCE }}"
+   
+   - name: displaying one using boolean
+     ansible.builtin.debug:
+       msg: "Boolean value is: {{ Trainer }}"

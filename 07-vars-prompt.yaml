@@ -1,0 +1,14 @@
+- name: playbook using vars_prompt
+  hosts: localhost
+  vars_prompt:
+  - name: USERNAME
+    prompt: Please enter your USERNAME
+    private: false
+  - name: PASSWORD
+    prompt: Please enter your PASSWORD
+    private: true
+  tasks:
+  - name: task using vars_prompt
+    ansible.builtin.debug:
+      msg: "User name is {{ USERNAME }}, Password is {{ PASSWORD }}"
+    

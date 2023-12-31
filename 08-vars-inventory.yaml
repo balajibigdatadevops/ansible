@@ -1,0 +1,6 @@
+- name: playbook using variables at inventory file
+  hosts: localhost
+  tasks:
+  - name: task using at inventory file level
+    ansible.builtin.debug:
+      msg: "Hello, I am learning {{ Course }} and Trainer is {{ Trainer }} and duration is {{ Duration }}"

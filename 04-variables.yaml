@@ -1,0 +1,12 @@
+##PLAY level variables
+- name: playbook using variables
+  hosts: localhost
+  vars:
+   Course: "Devops"
+   Trainer: "ABC"
+   Duration: "110HRS"
+  tasks:
+  - name: using variables
+    ansible.builtin.debug:
+      msg: "Hello, I am learning {{ Course }} and Trainer is {{ Trainer }} and Duration is {{ Duration }}"
+      

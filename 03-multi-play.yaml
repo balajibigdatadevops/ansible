@@ -1,0 +1,17 @@
+#playbook is list of plays
+- name: playbook is using  play1
+  hosts: localhost
+  tasks:
+  - name: displaying PLAY1 TASK1
+    ansible.builtin.debug:
+      msg: "Hello PLAY1 TASK1"
+
+
+- name: playbook is using play2
+  hosts: localhost
+  tasks:
+  - name: displaying PLAY2 TASK2
+    ansible.builtin.debug:
+      msg: "Hello PLAY2 TASK2"
+
+

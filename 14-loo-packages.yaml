@@ -1,0 +1,13 @@
+- name: playbook to install multiple packages
+  hosts: localhost
+  become: true
+  tasks:
+  - name: installing multiple packages
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - git
+    - nginx
+    - postfix
+    - mysql

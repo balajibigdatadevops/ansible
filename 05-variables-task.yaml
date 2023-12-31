@@ -1,0 +1,15 @@
+- name: playbook using variables at task level
+  hosts: localhost
+  vars:
+   Course: "DevOps"
+   Trainer: "XYZ"
+   Duration: "150HRS"
+  tasks:
+  - name: using vars at task level
+    vars:
+      Course: "DevOPS with AWS"
+      Trainer: "ABC"
+      Duration: "125HRS"
+    ansible.builtin.debug:
+      msg: "Hello, I am learning {{ Course }} Trainer is "{{ Trainer }} and Duration is {{ Duration }}"
+      

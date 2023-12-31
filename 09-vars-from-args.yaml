@@ -1,0 +1,6 @@
+- name: playbook using at command line args
+  hosts: localhost
+  tasks:
+  - name: task using at command line level
+    ansible.builtin.debug:
+      msg: "Hello {{ PERSON }}, Good {{ WISHES }}"
