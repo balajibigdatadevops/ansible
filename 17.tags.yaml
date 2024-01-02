@@ -1,0 +1,40 @@
+- name: Play with 5 tasks
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: "This is a first task"
+      tags:
+        - first
+        - common
+        - always
+    - debug:
+        msg: "This is a second task"
+      tags:
+        - second
+        - never
+    - debug:
+        msg: "This is a third task"
+      tags:
+        - third
+        - common
+        - never
+    - debug:
+        msg: "This is a fourth task"
+      tags:
+        - fourth
+        - never
+    - debug:
+        msg: "This is a fifth task"
+      tags:
+        - fifth
+        - never
+
+##commands
+##ansible-playbook <playbookname> --list-tags
+##ansible-playbook <playbookname> --tag first
+##ansible-playbook <playbookname> --tag first,second
+##ansible-playbook <playbookname> --skip-tags third
+## always means always execute wheter u mention tag or not
+## never means by default it will not execute any task"
+## suppose if we want run first and third task with tag common we can use and execute it.
